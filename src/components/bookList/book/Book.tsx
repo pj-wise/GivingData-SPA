@@ -1,14 +1,22 @@
-import React from 'react';
+import { useState } from 'react';
 import { iVolumeInfo } from '../../../models/BooksDto';
 import './Book.scss';
 import noImage from '../../../assets/no-image.png';
 import { Button, Divider, Box } from '@mui/material';
+import BookDetails from '../bookDetails/BookDetails';
 
 interface iBookProps {
   details: iVolumeInfo;
+  id: string;
 }
 
-const Book = ({ details }: iBookProps) => {
+const Book = ({ details, id }: iBookProps) => {
+  const [toggleDialog, setToggleDialog] = useState(false);
+
+  const openDialog = () => {
+    setToggleDialog(true);
+  };
+
   return (
     <div className='book-card'>
       <Box className='image-container'>
@@ -25,9 +33,15 @@ const Book = ({ details }: iBookProps) => {
 
         <h3>{details.title}</h3>
       </Box>
-      <Button variant='text' color='info'>
+      <Button onClick={openDialog} variant='text' color='info'>
         See Details
       </Button>
+      <BookDetails
+        open={toggleDialog}
+        setOpen={setToggleDialog}
+        data={details}
+        id={id}
+      />
     </div>
   );
 };

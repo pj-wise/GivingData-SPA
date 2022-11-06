@@ -1,0 +1,17 @@
+.dialog-container {
+  .dialog-header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .link-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .rating-container {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
