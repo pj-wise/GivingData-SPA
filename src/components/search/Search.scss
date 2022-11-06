@@ -1,6 +1,23 @@
-.search-input {
-  height: 2rem;
-  width: 50vw;
-  border-radius: 5px;
-  border: 1px solid grey;
+@import '../../scss/variables';
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  // justify-content: space-evenly;
+  background-color: $color-secondary;
+  padding: 1.5rem 1.5rem;
+
+  .search-input {
+    width: 35vw;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: white;
+  }
+
+  .submit-btn {
+    // height: 3rem;
+    margin-left: 1rem;
+    align-items: center;
+  }
 }

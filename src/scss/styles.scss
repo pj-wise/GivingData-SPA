@@ -1,0 +1,13 @@
+@use '../components/search/Search.scss';
+@use '../components/bookList/book/Book.scss';
+@use '../components/bookList/BookList.scss';
+@import './variables';
+
+body {
+  margin: 0;
+}
+
+.App {
+  background-color: $color-main;
+  text-align: center;
+}
