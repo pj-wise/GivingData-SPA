@@ -21,6 +21,7 @@ const Book = ({ details, id }: iBookProps) => {
     <div className='book-card'>
       <Box className='image-container'>
         <img
+          alt={`${details.title} book cover`}
           src={
             details.imageLinks?.thumbnail
               ? details.imageLinks?.thumbnail

@@ -1,6 +1,5 @@
 import { API } from '../constants/api';
 import axios from 'axios';
-import { useSnackbar } from 'notistack';
 
 export class BooksService {
   getBooks = async (queryString: string) => {

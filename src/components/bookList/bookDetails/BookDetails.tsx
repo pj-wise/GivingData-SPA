@@ -1,13 +1,5 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import {
-  Box,
-  Button,
-  Rating,
-  Typography,
-  Chip,
-  Link,
-  Divider,
-} from '@mui/material';
+import React, { useState, useEffect } from 'react';
+import { Box, Button, Rating, Typography, Chip, Link } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
@@ -25,7 +17,7 @@ interface iBookDetailsProps {
 
 const BookDetails = ({ open, setOpen, data, id }: iBookDetailsProps) => {
   const [rating, setRating] = useState(0);
-  const [savedRating, setSavedRating] = useState(localStorage.getItem(id));
+  const [, setSavedRating] = useState(localStorage.getItem(id));
 
   useEffect(() => {
     localStorage.setItem(id, rating.toString());
@@ -52,6 +44,7 @@ const BookDetails = ({ open, setOpen, data, id }: iBookDetailsProps) => {
         </Box>
         <Box>
           <img
+            alt={`${data.title} book cover`}
             src={
               data.imageLinks?.thumbnail ? data.imageLinks?.thumbnail : noImage
             }

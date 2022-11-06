@@ -9,7 +9,7 @@ const Search = () => {
   const booksService = new BooksService();
   const [queryString, setQueryString] = useState('Ice and Fire');
   const [input, setInput] = useState('');
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     booksService.getBooks(queryString).then((res) => {
