@@ -34,7 +34,7 @@ const BookDetails = ({ open, setOpen, data, id }: iBookDetailsProps) => {
         <Box>
           {data.title}
           <Typography>{data.subtitle}</Typography>
-          {data.authors.map((author, i) => (
+          {data.authors?.map((author, i) => (
             <Typography key={i}>Author: {author}</Typography>
           ))}
           <Typography>Published: {data.publishedDate}</Typography>
